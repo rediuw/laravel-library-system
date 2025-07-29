@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('author');
-            $table->text('description')->nullable();
+            $table->string('isbn')->nullable();
+            $table->integer('year')->nullable();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

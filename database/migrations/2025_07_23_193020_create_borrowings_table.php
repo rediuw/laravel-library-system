@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('book_id')->constrained()->onDelete('cascade');
-            $table->date('borrowed_at')->default(now());
-            $table->date('due_date');
-            $table->date('returned_at')->nullable();
+            $table->timestamp('borrowed_at')->nullable();
+            $table->timestamp('returned_at')->nullable();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
